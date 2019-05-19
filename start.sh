@@ -1,0 +1,1 @@
+java -Dserver.port=8081 -jar movie-finder.web.jar

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Movie</title>
+</head>
+<body>
+    <th:block th:fragment="movie(movieDetails)">
+        <h2 th:text="${movieDetails.title}"></h2>
+        <div><i th:text="${movieDetails.description}"></i></div>
+        <div>&nbsp;</div>
+        <div><b>Producer: </b><i th:text="${movieDetails.producer}"></i></div>
+        <div><b>Available in 3D? </b><i th:text="${movieDetails.availableIn3D} ? 'Yes!' : 'Sadly not'"></i></div>
+        <div><b>Age rating: </b><i th:text="${movieDetails.ageRating}"></i></div>
+        <div><b>Total likes: </b><i th:text="${movieDetails.likes}"></i></div>
+        <div th:replace="fragments/comments :: comments(commentsDetails=${movieDetails.comments})"></div>
+        <div class="bottom-border">&nbsp;</div>
+    </th:block>
+</body>
+</html>
+

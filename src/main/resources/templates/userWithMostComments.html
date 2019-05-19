@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layouts/baseLayout}">
+
+<head>
+  <title>User with most comments</title>
+</head>
+<body>
+<div layout:fragment="content">
+    <form method="get">
+        <header>
+            <a href="/">Back to start page</a>
+            <h1>User with the most comments</h1>
+        </header>
+
+        <div>
+            <p>The user with the most comments is: '
+                <span th:text="${user.userName}"></span>
+                ' with <span th:text="${user.totalNumberOfComments}"></span>
+                comments
+            </p>
+        </div>
+    </form>
+</div>
+</body>
+</html>

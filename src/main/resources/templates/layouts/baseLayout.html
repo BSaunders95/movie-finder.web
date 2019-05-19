@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+    <title layout:title-pattern="$CONTENT_TITLE"></title>
+    <style>
+    * {
+        font-family: Arial;
+    }
+
+    .bottom-border {
+        border-bottom: 1px solid grey;
+    }
+
+    .small-font {
+        font-size: 12px
+    }
+
+    .error {
+        color: red;
+    }
+
+    .error-container {
+        padding-bottom: 10px;
+    }
+
+    .padding-top {
+        padding-top: 20px;
+    }
+
+    td {
+        padding-right: 15px;
+    }
+
+    a {
+        font-size: 14px;
+        color: blue;
+        position: absolute;
+        right: 10px;
+    }
+    </style>
+</head>
+<body>
+    <div layout:fragment="content"></div>
+</body>
+</html>

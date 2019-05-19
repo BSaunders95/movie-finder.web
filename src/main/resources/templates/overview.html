@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layouts/baseLayout}">
+
+<head>
+  <title>Welcome!</title>
+</head>
+<body>
+<div layout:fragment="content">
+    <form th:action="@{''}" th:object="${overview}" method="post">
+        <header>
+          <h1>Welcome to the movie finder application!</h1>
+        </header>
+
+        <h2>What would you like to do?</h2>
+
+        <div>
+            <div class="error-container" th:if="${#fields.hasErrors('action')}">
+                <span class="error"
+                      th:each="e : ${#fields.errors('action')}" th:text="${e}" >
+                </span>
+            </div>
+
+            <div>
+                <input id="viewAllMoviesRadio"
+                       type="radio"
+                       value="viewAllMovies"
+                       th:field="*{action}"/>
+                <label for="viewAllMoviesRadio">View all movies!</label>
+            </div>
+            <div>
+                <input id="viewMovieWithMostLikesRadio"
+                       type="radio"
+                       value="viewMovieWithMostLikes"
+                       th:field="*{action}"/>
+                <label for="viewMovieWithMostLikesRadio">View the movie with the most likes</label>
+            </div>
+            <div>
+                <input id="viewUserWithMostCommentsRadio"
+                       type="radio"
+                       value="viewUserWithMostComments"
+                       th:field="*{action}"/>
+                <label for="viewUserWithMostCommentsRadio">View the user with the most comments</label>
+            </div>
+        </div>
+
+        <div class="padding-top">
+            <input type="submit" role="button" value="Start!"/>
+        </div>
+    </form>
+</div>
+</body>
+</html>

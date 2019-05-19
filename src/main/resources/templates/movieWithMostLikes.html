@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layouts/baseLayout}">
+
+<head>
+  <title>Movie with most likes</title>
+</head>
+<body>
+<div layout:fragment="content">
+    <form method="get">
+        <header>
+            <a href="/">Back to start page</a>
+            <h1>Movie with the most likes</h1>
+        </header>
+
+        <div>
+            <p>The movie with the most likes is: '<span th:text="${movie.title}"></span>'</p>
+        </div>
+
+        <h2>Movie details:</h2>
+        <div th:replace="fragments/movie :: movie(movieDetails=${movie})"></div>
+    </form>
+</div>
+</body>
+</html>

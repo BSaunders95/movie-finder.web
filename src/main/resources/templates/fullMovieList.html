@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layouts/baseLayout}">
+
+<head>
+    <title>All Movies</title>
+</head>
+<body>
+    <div layout:fragment="content">
+        <form th:object="${movieList}" method="get">
+            <header>
+                <a href="/">Back to start page</a>
+                <h1>Full movie list</h1>
+            </header>
+
+            <th:block th:each="movie : ${movieList}">
+                <div th:replace="fragments/movie :: movie(movieDetails=${movie})"></div>
+            </th:block>
+        </form>
+    </div>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Comments</title>
+</head>
+<body>
+<th:block th:fragment="comments(commentsDetails)">
+    <h3>Comments</h3>
+    <table>
+        <tr>
+            <th:block th:each="comment : ${commentsDetails}">
+                <td>
+                    <div>
+                        <u><b th:text="${comment.user}"></b></u>
+                        <span class="small-font"> (<i th:text="${#temporals.format(comment.dateCreated, 'yyyy-MM-dd')}"></i>)</span>
+                    </div>
+                    <div>&nbsp;</div>
+                    <div><i th:text="${comment.message}"></i></div>
+                    <div><b>Overall rating: </b><i th:text="${comment.like}"></i></div>
+                </td>
+            </th:block>
+        </tr>
+    </table>
+</th:block>
+</body>
+</html>
+

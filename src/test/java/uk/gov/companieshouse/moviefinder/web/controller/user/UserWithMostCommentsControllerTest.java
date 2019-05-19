@@ -22,8 +22,6 @@ import uk.gov.companieshouse.moviefinder.web.service.UserService;
 @TestInstance(TestInstance.Lifecycle.PER_CLASS)
 public class UserWithMostCommentsControllerTest {
 
-    private MockMvc mockMvc;
-
     @Mock
     private UserService userService;
 
@@ -41,7 +39,7 @@ public class UserWithMostCommentsControllerTest {
     @DisplayName("Get the user with the most comments")
     void getUserWithMostComments() throws Exception {
 
-        this.mockMvc = MockMvcBuilders.standaloneSetup(userWithMostCommentsController).build();
+        MockMvc mockMvc = MockMvcBuilders.standaloneSetup(userWithMostCommentsController).build();
 
         when(userService.getUserWithMostComments()).thenReturn(user);
 

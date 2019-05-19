@@ -1,5 +1,5 @@
 # Movie Finder Web
-An application to display movie data requested by [movie-finder.api]("https://github.com/BSaunders95/movie-finder.api")
+An application to display movie data requested from the `movie-finder.api`
 
 ## Requirements
 In order to run the application locally you'll need the following installed on your machine:

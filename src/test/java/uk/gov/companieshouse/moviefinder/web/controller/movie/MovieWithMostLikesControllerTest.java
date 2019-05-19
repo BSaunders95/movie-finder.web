@@ -22,8 +22,6 @@ import uk.gov.companieshouse.moviefinder.web.service.MovieService;
 @TestInstance(TestInstance.Lifecycle.PER_CLASS)
 public class MovieWithMostLikesControllerTest {
 
-    private MockMvc mockMvc;
-
     @Mock
     private MovieService movieService;
 
@@ -41,7 +39,7 @@ public class MovieWithMostLikesControllerTest {
     @DisplayName("Get the movie with the most likes")
     void getMovieWithMostLikes() throws Exception {
 
-        this.mockMvc = MockMvcBuilders.standaloneSetup(movieWithMostLikesController).build();
+        MockMvc mockMvc = MockMvcBuilders.standaloneSetup(movieWithMostLikesController).build();
 
         when(movieService.getMovieWithMostLikes()).thenReturn(movie);
 

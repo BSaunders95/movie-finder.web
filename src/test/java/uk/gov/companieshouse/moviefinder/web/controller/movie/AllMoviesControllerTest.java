@@ -23,8 +23,6 @@ import uk.gov.companieshouse.moviefinder.web.service.MovieService;
 @TestInstance(TestInstance.Lifecycle.PER_CLASS)
 public class AllMoviesControllerTest {
 
-    private MockMvc mockMvc;
-
     @Mock
     private MovieService movieService;
 
@@ -42,7 +40,7 @@ public class AllMoviesControllerTest {
     @DisplayName("Get all movies")
     void getAllMovies() throws Exception {
 
-        this.mockMvc = MockMvcBuilders.standaloneSetup(allMoviesController).build();
+        MockMvc mockMvc = MockMvcBuilders.standaloneSetup(allMoviesController).build();
 
         when(movieService.getFullMovieList()).thenReturn(movieList);
 
